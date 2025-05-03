@@ -41,7 +41,6 @@ public class Main extends Application {
         grid.add(directoryField, 1, 0);
         grid.add(chooseDirectoryButton, 2, 0);
 
-        // Обработчик для кнопки выбора папки
         chooseDirectoryButton.setOnAction(event -> {
             DirectoryChooser directoryChooser = new DirectoryChooser();
             directoryChooser.setTitle("Выберите папку с транзакциями");
@@ -68,7 +67,6 @@ public class Main extends Application {
         Button mergeButton = new Button("Объединить файлы");
         grid.add(mergeButton, 1, 3);
 
-        // Обработчик нажатия на кнопку
         mergeButton.setOnAction(event -> {
             if (directoryPath.isEmpty()) {
                 new Alert(Alert.AlertType.ERROR, "Выберите папку с транзакциями!").showAndWait();
@@ -85,7 +83,6 @@ public class Main extends Application {
             }
         });
 
-        // Создаем сцену и отображаем окно
         Scene scene = new Scene(grid, 500, 250);
         primaryStage.setScene(scene);
         primaryStage.show();
